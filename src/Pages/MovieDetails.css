@@ -1,0 +1,299 @@
+.movie-details{
+  background:#141414;
+  color:white;
+  min-height:100vh;
+}
+
+/* Trailer */
+
+.trailer-box{
+  width:90%;
+  max-width:1400px;
+  margin:30px auto;
+}
+
+.trailer-box iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  height:auto;
+  border:none;
+  border-radius:12px;
+  display:block;
+}
+
+/* Content */
+
+.movie-content{
+  width:90%;
+  margin:auto;
+  padding:30px 0 60px;
+}
+
+.movie-title{
+  font-size:4rem;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.movie-meta{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+
+  color:#d2d2d2;
+  margin-bottom:25px;
+}
+
+.movie-overview{
+  max-width:1000px;
+
+  color:#d0d0d0;
+  line-height:1.8;
+
+  margin-bottom:50px;
+}
+
+/* Top Cast */
+
+.cast-title{
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+.cast-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* Cast Card */
+
+.cast-card{
+  width:200px;
+
+  background:#1f1f1f;
+  border-radius:12px;
+
+  overflow:hidden;
+
+  transition:.3s ease;
+}
+
+.cast-card:hover{
+  transform:translateY(-5px);
+}
+
+.cast-image{
+  width:100%;
+  height:320px;
+
+  object-fit:contain;
+  object-position:center top;
+
+  background:#2a2a2a;
+
+  display:block;
+}
+
+.cast-card h4{
+  font-size:16px;
+  font-weight:700;
+
+  padding:12px 12px 4px;
+  color:white;
+}
+
+.cast-card p{
+  font-size:14px;
+  color:#b3b3b3;
+
+  padding:0 12px 12px;
+}
+
+.back-btn{
+  position:fixed;
+
+  top:90px;
+  left:25px;
+
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  background:rgba(0,0,0,.7);
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  z-index:9999;
+
+  font-size:18px;
+
+  transition:.3s;
+}
+
+.back-btn:hover{
+  background:white;
+  color:black;
+}
+/* Mobile */
+
+@media(max-width:768px){
+
+  .movie-content{
+    width:95%;
+  }
+
+  .movie-title{
+    font-size:2.3rem;
+  }
+
+  .cast-card{
+    width:160px;
+  }
+
+  .cast-image{
+    height:260px;
+  }
+}
+/* ========================= */
+/* MacBook / Large Laptop */
+/* ========================= */
+
+@media(max-width:1400px){
+
+  .movie-title{
+    font-size:3.2rem;
+  }
+
+  .cast-card{
+    width:180px;
+  }
+
+  .cast-image{
+    height:280px;
+  }
+
+}
+
+/* ========================= */
+/* Laptop */
+/* ========================= */
+
+@media(max-width:1200px){
+
+  .movie-content{
+    width:95%;
+  }
+
+  .movie-title{
+    font-size:2.8rem;
+  }
+
+  .cast-card{
+    width:170px;
+  }
+
+  .cast-image{
+    height:250px;
+  }
+
+}
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+
+@media(max-width:768px){
+
+  .trailer-box{
+    width:95%;
+    margin:20px auto;
+  }
+
+  .movie-content{
+    width:95%;
+  }
+
+  .movie-title{
+    font-size:2.2rem;
+  }
+
+  .movie-meta{
+    gap:10px;
+    font-size:14px;
+  }
+
+  .movie-overview{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .cast-title{
+    font-size:1.6rem;
+  }
+
+  .cast-card{
+    width:150px;
+  }
+
+  .cast-image{
+    height:220px;
+  }
+
+  .back-btn{
+    top:80px;
+    left:15px;
+
+    width:42px;
+    height:42px;
+  }
+
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media(max-width:480px){
+
+  .movie-title{
+    font-size:1.8rem;
+  }
+
+  .movie-overview{
+    font-size:13px;
+  }
+
+  .cast-container{
+    gap:12px;
+  }
+
+  .cast-card{
+    width:130px;
+  }
+
+  .cast-image{
+    height:180px;
+  }
+
+  .cast-card h4{
+    font-size:13px;
+  }
+
+  .cast-card p{
+    font-size:12px;
+  }
+
+  .back-btn{
+    width:38px;
+    height:38px;
+    font-size:15px;
+  }
+
+}

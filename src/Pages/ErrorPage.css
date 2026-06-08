@@ -1,0 +1,43 @@
+.error-page{
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:#141414;
+  color:white;
+
+  text-align:center;
+
+  padding:20px;
+}
+
+.error-page h1{
+  font-size:8rem;
+  color:#e50914;
+}
+
+.error-page h2{
+  font-size:2rem;
+  margin-bottom:15px;
+}
+
+.error-page p{
+  color:#bbb;
+  margin-bottom:25px;
+}
+
+.error-page button{
+  border:none;
+
+  background:#e50914;
+  color:white;
+
+  padding:12px 24px;
+
+  border-radius:6px;
+
+  cursor:pointer;
+}

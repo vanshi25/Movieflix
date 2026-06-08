@@ -1,0 +1,31 @@
+.splash-screen{
+  width:100vw;
+  height:100vh;
+
+  background:black;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.netflix-logo{
+  color:#e50914;
+
+  font-size:5rem;
+  font-weight:900;
+
+  animation:zoomIn 2s ease;
+}
+
+@keyframes zoomIn{
+  0%{
+    transform:scale(.5);
+    opacity:0;
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}

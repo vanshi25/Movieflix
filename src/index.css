@@ -1,0 +1,267 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#141414;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
+}
+
+#root{
+  min-height:100vh;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.home,
+.category-page{
+  min-height:100vh;
+}
+
+.home{
+  padding-bottom:40px;
+}
+
+.page-title{
+  font-size:2rem;
+  font-weight:700;
+  padding:25px 30px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  font-size:1.6rem;
+  font-weight:700;
+  margin:20px 0 10px;
+  padding-left:30px;
+}
+
+/* =========================
+   MOVIES ROW
+========================= */
+
+.movies-row{
+  display:flex;
+  gap:10px;
+
+  overflow-x:auto;
+  overflow-y:visible;
+
+  padding:20px 30px;
+
+  scrollbar-width:none;
+  scroll-behavior:smooth;
+}
+
+.movies-row::-webkit-scrollbar{
+  display:none;
+}
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.movies-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(250px,1fr)
+    );
+
+  gap:20px;
+
+  padding:20px 30px 40px;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:2rem;
+  font-weight:bold;
+}
+
+.loader-circle{
+  width:50px;
+  height:50px;
+
+  border:5px solid #333;
+  border-top:5px solid #e50914;
+
+  border-radius:50%;
+
+  margin:40px auto;
+
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+/* =========================
+   LARGE MONITOR
+========================= */
+
+@media(max-width:1600px){
+
+  .movies-grid{
+    grid-template-columns:
+      repeat(auto-fill,minmax(240px,1fr));
+  }
+
+}
+
+/* =========================
+   MACBOOK / LARGE LAPTOP
+========================= */
+
+@media(max-width:1400px){
+
+  .movies-grid{
+    grid-template-columns:
+      repeat(auto-fill,minmax(220px,1fr));
+  }
+
+  .page-title{
+    font-size:1.9rem;
+  }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+  .movies-grid{
+    grid-template-columns:
+      repeat(auto-fill,minmax(200px,1fr));
+  }
+
+  .page-title{
+    font-size:1.8rem;
+  }
+
+  .section-title{
+    font-size:1.4rem;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+  .page-title{
+    font-size:1.5rem;
+    padding:20px 15px;
+  }
+
+  .section-title{
+    font-size:1.3rem;
+    padding-left:15px;
+  }
+
+  .movies-row{
+    padding:15px;
+  }
+
+  .movies-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:12px;
+    padding:15px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .page-title{
+    font-size:1.3rem;
+    padding:15px;
+  }
+
+  .section-title{
+    font-size:1.1rem;
+    padding-left:15px;
+  }
+
+  .movies-row{
+    padding:10px 15px;
+    gap:8px;
+  }
+
+  .movies-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:10px;
+    padding:10px;
+  }
+
+  .loader{
+    font-size:1.4rem;
+  }
+
+  .loader-circle{
+    width:40px;
+    height:40px;
+  }
+
+}

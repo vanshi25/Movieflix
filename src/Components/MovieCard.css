@@ -1,0 +1,240 @@
+
+
+
+
+
+.movie-card{
+  position:relative;
+  width:260px;
+  min-width:260px;
+  cursor:pointer;
+  overflow:hidden;
+  border-radius:8px;
+}
+
+.movie-poster{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+
+/* Title on image */
+.movie-name-overlay{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+
+  color:white;
+  font-size:15px;
+  font-weight:700;
+
+  text-shadow:0 2px 8px rgba(0,0,0,.9);
+  z-index:3;
+}
+
+/* Hover overlay */
+.movie-hover-card{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.95),
+    rgba(0,0,0,.3)
+  );
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  opacity:0;
+  transition:.25s;
+}
+
+.movie-card:hover .movie-hover-card{
+  opacity:1;
+}
+
+.hover-image{
+  display:none;
+}
+
+.hover-content{
+  padding:12px;
+}
+
+.overlay-buttons{
+  display:flex;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.icon-btn{
+  width:38px;
+  height:38px;
+
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.6);
+
+  background:rgba(0,0,0,.6);
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  position:relative;
+}
+
+.icon-btn:hover{
+  background:white;
+  color:black;
+}
+
+.movie-info{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.match{
+  color:#46d369;
+  font-weight:700;
+  font-size:14px;
+}
+
+.hd{
+  border:1px solid rgba(255,255,255,.5);
+  padding:2px 6px;
+  border-radius:3px;
+  font-size:11px;
+  color:white;
+}
+
+.hover-title{
+  display:none;
+}
+
+.tooltip{
+  position:absolute;
+  bottom:50px;
+  left:50%;
+  transform:translateX(-50%);
+
+  background:white;
+  color:black;
+
+  padding:5px 8px;
+  border-radius:4px;
+
+  white-space:nowrap;
+  font-size:12px;
+
+  opacity:0;
+  visibility:hidden;
+}
+
+.icon-btn:hover .tooltip{
+  opacity:1;
+  visibility:visible;
+}
+.favorite-active{
+  background:#e50914;
+  color:white;
+  border-color:#e50914;
+}
+
+.liked-active{
+  background:#46d369;
+  color:white;
+  border-color:#46d369;
+}
+
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+
+@media(max-width:1024px){
+
+  .movie-card{
+    width:220px;
+    min-width:220px;
+  }
+
+  .movie-poster{
+    height:130px;
+  }
+
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media(max-width:768px){
+
+  .movie-card{
+    width:180px;
+    min-width:180px;
+  }
+
+  .movie-poster{
+    height:110px;
+  }
+
+  .movie-name-overlay{
+    font-size:13px;
+  }
+
+  .overlay-buttons{
+    gap:6px;
+  }
+
+  .icon-btn{
+    width:34px;
+    height:34px;
+    font-size:13px;
+  }
+
+}
+
+/* ========================= */
+/* Small Phones */
+/* ========================= */
+
+@media(max-width:480px){
+
+  .movie-card{
+    width:150px;
+    min-width:150px;
+  }
+
+  .movie-poster{
+    height:95px;
+  }
+
+  .movie-name-overlay{
+    font-size:12px;
+    left:6px;
+    bottom:6px;
+  }
+
+  .hover-content{
+    padding:8px;
+  }
+
+  .icon-btn{
+    width:30px;
+    height:30px;
+    font-size:12px;
+  }
+
+  .tooltip{
+    display:none;
+  }
+
+}

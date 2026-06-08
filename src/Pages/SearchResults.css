@@ -1,0 +1,62 @@
+.search-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap:20px;
+
+  padding:20px 50px;
+}
+
+/* Large Laptop / MacBook */
+
+@media(max-width:1400px){
+
+  .search-grid{
+    grid-template-columns:
+      repeat(5, 1fr);
+  }
+
+}
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+  .search-grid{
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    padding:20px 30px;
+  }
+
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+  .search-grid{
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:15px;
+    padding:15px 20px;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+  .search-grid{
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:10px;
+    padding:10px 15px;
+  }
+
+}
