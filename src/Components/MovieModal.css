@@ -1,13 +1,9 @@
-
-
-
 .modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.9);
   display: flex;
   justify-content: center;
-  /* DESKTOP PAR CENTER SAHI HAI */
   align-items: center; 
   z-index: 9999;
   overflow-y: auto;
@@ -177,9 +173,8 @@
 /* Tablet View Break */
 @media(max-width: 768px) {
   .modal-overlay {
-    /* MOBILE/TABLET FIX: Centering hata kar top alignment diya taaki item upar na dabe */
     align-items: flex-start; 
-    padding-top: 85px; /* Navbar layout spacing */
+    padding-top: 135px !important; /* FIXED VALUE: 70px Navbar + 50px Search bar + safe gap */
   }
 
   .movie-modal {
@@ -229,14 +224,14 @@
 /* Mobile View Break */
 @media(max-width: 480px) {
   .modal-overlay {
-    padding: 85px 10px 20px 10px; /* Top side 85px space safe layout ke liye */
+    align-items: flex-start;
+    padding: 125px 10px 20px 10px !important; /* FIXED VALUE: 65px Navbar + 45px Search bar + space */
   }
 
   .modal-banner {
-    height: 230px; /* Thoda sa height scale up kiya balance ke liye */
+    height: 230px; 
   }
 
-  /* Mobile screen par back-button size perfect visibility ke liye */
   .back-btn {
     top: 10px;
     left: 10px;

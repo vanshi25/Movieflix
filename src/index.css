@@ -42,16 +42,22 @@ img{
 }
 
 /* =========================
-   PAGE
+   PAGE (Overlapping Fixed Here)
 ========================= */
 
 .home,
 .category-page{
   min-height:100vh;
+  box-sizing: border-box;
 }
 
 .home{
   padding-bottom:40px;
+}
+
+/* Desktop spacing */
+.home, .category-page {
+  padding-top: 75px; 
 }
 
 .page-title{
@@ -202,6 +208,11 @@ img{
 
 @media(max-width:768px){
 
+  /* FIXED VALUE: Navbar + Search layout top buffer zone */
+  .home, .category-page {
+    padding-top: 135px !important; 
+  }
+
   .page-title{
     font-size:1.5rem;
     padding:20px 15px;
@@ -217,9 +228,7 @@ img{
   }
 
   .movies-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap:12px;
     padding:15px;
   }
@@ -231,6 +240,11 @@ img{
 ========================= */
 
 @media(max-width:480px){
+
+  /* FIXED VALUE: Navbar + Search layout top buffer zone */
+  .home, .category-page {
+    padding-top: 120px !important; 
+  }
 
   .page-title{
     font-size:1.3rem;
@@ -248,9 +262,7 @@ img{
   }
 
   .movies-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap:10px;
     padding:10px;
   }

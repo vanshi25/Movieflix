@@ -24,22 +24,22 @@
   }
 }
 
-/* Tablet */
+/* Tablet (Fixes Image 4428.jpg) */
 @media(max-width: 768px) {
   .search-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    /* Tablet mobile view ke liye top padding 85px safe side rahegi */
-    padding: 85px 20px 15px 20px; 
+    /* FIXED VALUE: Navbar (70px) + Search Wrapper (50px) + Gap = 135px */
+    padding: 135px 20px 15px 20px !important; 
   }
 }
 
-/* Mobile */
+/* Mobile (Fixes Image 4428.jpg) */
 @media(max-width: 480px) {
   .search-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    /* Mobile par jahan sabse zyada dikkat aa rahi thi, wahan top padding 85px kar di */
-    padding: 85px 15px 10px 15px; 
+    /* FIXED VALUE: Navbar (65px) + Search Wrapper (45px) + Gap = 120px */
+    padding: 120px 15px 10px 15px !important; 
   }
 }
