@@ -1,13 +1,14 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.9);
+  background: rgba(0, 0, 0, 0.85); 
   display: flex;
   justify-content: center;
-  align-items: center; 
-  z-index: 9999;
+  align-items: center; /* DESKTOP PAR CENTRE RAKHA HAI */
+  z-index: 99999 !important; 
   overflow-y: auto;
-  padding: 20px;
+  padding: 40px 20px; 
+  box-sizing: border-box;
 }
 
 .movie-modal {
@@ -17,15 +18,19 @@
   border-radius: 12px;
   overflow: hidden;
   color: white;
+  position: relative;
 }
 
 .modal-banner-container {
   position: relative;
+  width: 100%;
 }
 
-.modal-banner {
-  width: 100%;
-  height: 650px;
+/* VIDEO CONTAINER / BANNER FIX (Taki video player upar se na kate) */
+.modal-banner, 
+.modal-banner-container iframe {
+  width: 100% !important;
+  height: 650px !important;
   object-fit: cover;
   background: black;
   border: none;
@@ -84,18 +89,7 @@
   cursor: pointer;
 }
 
-.favorite-active {
-  background: #e50914 !important;
-  border-color: #e50914 !important;
-  color: white !important;
-}
-
-.liked-active {
-  background: #46d369 !important;
-  border-color: #46d369 !important;
-  color: white !important;
-}
-
+/* BACK BUTTON */
 .back-btn {
   position: absolute;
   top: 20px;
@@ -104,14 +98,15 @@
   height: 50px;
   border: none;
   border-radius: 50%;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10010 !important;
   font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.5);
 }
 
 .replay-btn {
@@ -158,99 +153,74 @@
   color: #ddd;
 }
 
-.modal-right-section p {
-  line-height: 1.8;
-  color: #ccc;
-}
-
-/* Laptop / MacBook Media Breaks */
-@media(max-width: 1024px) {
-  .modal-banner {
-    height: 500px;
-  }
-}
-
-/* Tablet View Break */
+/* ========================= */
+/* Tablet */
+/* ========================= */
 @media(max-width: 768px) {
   .modal-overlay {
-    align-items: flex-start; 
-    padding-top: 135px !important; /* FIXED VALUE: 70px Navbar + 50px Search bar + safe gap */
+    align-items: flex-end; /* Mobile/Tablet par poore popup ko niche push karega */
+    padding: 0px 10px 20px 10px !important; 
   }
 
   .movie-modal {
     width: 100%;
+    border-radius: 16px;
+    max-height: 80vh; /* Taki screen se upar na bhaage */
+    overflow-y: auto;
   }
 
-  .modal-banner {
-    height: 280px;
-  }
-
-  /* Back button overlay fix */
-  .back-btn {
-    top: 15px;
-    left: 15px;
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
-  }
-
-  .banner-content {
-    left: 20px;
-    bottom: 20px;
-  }
-
-  .banner-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .movie-modal-content {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .modal-movie-meta {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .replay-btn {
-    bottom: 15px;
-    right: 15px;
-    padding: 8px 14px;
-    font-size: 14px;
+  .modal-banner,
+  .modal-banner-container iframe {
+    height: 320px !important;
   }
 }
 
-/* Mobile View Break */
+/* ========================= */
+/* Mobile (TERE BATAAYE REQUIRMENT KI SETTING) */
+/* ========================= */
 @media(max-width: 480px) {
   .modal-overlay {
-    align-items: flex-start;
-    padding: 125px 10px 20px 10px !important; /* FIXED VALUE: 65px Navbar + 45px Search bar + space */
+    /* align-items: flex-end se modal bilkul niche se shuru hoga aur upar space khali rahega */
+    display: flex !important;
+    align-items: flex-end !important; 
+    justify-content: center !important;
+    padding: 0px 0px 0px 0px !important; /* Screen se bilkul touch bottom popup style */
+    background: rgba(0, 0, 0, 0.6); /* Peeche ka screen halka dikhega */
   }
 
-  .modal-banner {
-    height: 230px; 
+  .movie-modal {
+    width: 100%;
+    /* 82% height se ye screen ke center se shuru hokar niche tak rahega, header se 100% door */
+    height: 82vh !important; 
+    border-radius: 20px 20px 0 0 !important; /* Bottom-sheet look (sirf upar ke corners round) */
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.9);
+    animation: slideUp 0.3s ease-out; /* Mast smooth khulne ka effect */
   }
 
+  /* YouTube player aur image dono ko mobile responsive banaya */
+  .modal-banner,
+  .modal-banner-container iframe {
+    height: 240px !important; 
+    border-radius: 20px 20px 0 0 !important;
+  }
+
+  /* Back Button ko video player ke thoda niche ya perfect position par adjust kiya */
   .back-btn {
-    top: 10px;
-    left: 10px;
+    top: 15px;
+    left: 15px;
     width: 38px;
     height: 38px;
     font-size: 14px;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .banner-content h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
+}
 
-  .modal-play-btn {
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-
-  .modal-circle-btn {
-    width: 40px;
-    height: 40px;
-  }
+/* Slide up animation for mobile popup */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }

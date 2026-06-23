@@ -5,6 +5,7 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: 8px;
+  flex-shrink: 0; /* Isse row ke andar cards kabhi chote ya patle nahi honge */
 }
 
 .movie-poster {
@@ -136,17 +137,21 @@
   border-color: #46d369;
 }
 
+/* SEARCH GRID KE CARDS KO ALAG SE FIXED STYLE DIYA HAI TAKI HORIZONTAL ROWS KHARAB NA HO */
+.search-grid .movie-card {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+}
+
 /* ========================= */
 /* Tablet */
 /* ========================= */
 @media(max-width: 1024px) {
   .movie-card {
-    /* Grid layout me cards squeeze na ho isliye responsive width di hai */
-    width: 100%; 
-    max-width: 220px;
-    min-width: unset; /* Fixed min-width ko block kiya */
+    width: 220px;
+    min-width: 220px;
   }
-
   .movie-poster {
     height: 130px;
   }
@@ -157,23 +162,18 @@
 /* ========================= */
 @media(max-width: 768px) {
   .movie-card {
-    width: 100%;
-    max-width: 180px;
-    min-width: unset;
+    width: 160px;
+    min-width: 160px;
   }
-
   .movie-poster {
-    height: 110px;
+    height: 105px;
   }
-
   .movie-name-overlay {
     font-size: 13px;
   }
-
   .overlay-buttons {
     gap: 6px;
   }
-
   .icon-btn {
     width: 34px;
     height: 34px;
@@ -186,32 +186,25 @@
 /* ========================= */
 @media(max-width: 480px) {
   .movie-card {
-    width: 100%;
-    max-width: 100%; /* Grid columns me auto fit hone ke liye */
-    min-width: unset;
+    width: 140px;
+    min-width: 140px;
   }
-
   .movie-poster {
-    /* Mobile screen ratio par image height auto adjust hogi layout ke hisab se */
-    height: 100px; 
+    height: 90px;
   }
-
   .movie-name-overlay {
     font-size: 11px;
     left: 6px;
     bottom: 6px;
   }
-
   .hover-content {
     padding: 8px;
   }
-
   .icon-btn {
     width: 30px;
     height: 30px;
     font-size: 12px;
   }
-
   .tooltip {
     display: none;
   }
