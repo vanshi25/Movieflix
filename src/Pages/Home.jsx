@@ -1,9 +1,4 @@
-
-
 import Loader from "../Components/Loader";
-
-
-
 import { useEffect, useState } from "react";
 import "./CategoryPage.css";
 import MovieCard from "../Components/MovieCard";
@@ -78,12 +73,13 @@ function Home() {
     }
   };
 
- if (loading) {
-  return <Loader />;
-}
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
-    <div className="home">
+    /* paddingTop: '85px' se Hero Banner aur baki components Header ke niche bilkul set ho jayenge */
+    <div className="home" style={{ paddingTop: '85px', boxSizing: 'border-box' }}>
 
       <HeroBanner movie={heroMovie} />
 

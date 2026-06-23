@@ -1,479 +1,261 @@
-/* .modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  overflow-y:auto;
-  padding:20px;
+
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: flex;
+  justify-content: center;
+  /* DESKTOP PAR CENTER SAHI HAI */
+  align-items: center; 
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 20px;
 }
 
-.movie-modal{
-  width:95%;
-  max-width:1100px;
-  background:#181818;
-  border-radius:12px;
-  overflow:hidden;
-  color:white;
+.movie-modal {
+  width: 95%;
+  max-width: 1200px;
+  background: #181818;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
 }
 
-.modal-banner-container{
-  position:relative;
+.modal-banner-container {
+  position: relative;
 }
 
-.modal-banner{
-  width:100%;
-  height:500px;
-  object-fit:contain;
-  background:black;
-  border:none;
-  display:block;
+.modal-banner {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  background: black;
+  border: none;
+  display: block;
 }
 
-.banner-gradient{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
+.banner-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
     to top,
     #181818,
     transparent 60%
   );
+  pointer-events: none;
 }
 
-.banner-content{
-  position:absolute;
-  bottom:30px;
-  left:30px;
-  z-index:2;
+.banner-content {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  z-index: 20;
 }
 
-.banner-content h1{
-  font-size:3rem;
-  margin-bottom:20px;
+.banner-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.banner-buttons{
-  display:flex;
-  gap:12px;
-  align-items:center;
+.banner-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-.modal-play-btn{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  background:white;
-  color:black;
-  border:none;
-  padding:12px 22px;
-  border-radius:6px;
-  font-weight:700;
-  cursor:pointer;
+.modal-play-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.modal-circle-btn{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  border:2px solid rgba(255,255,255,.5);
-  background:#2a2a2a;
-  color:white;
-  cursor:pointer;
+.modal-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.5);
+  background: #2a2a2a;
+  color: white;
+  cursor: pointer;
 }
 
-.favorite-active{
-  background:#e50914 !important;
-  border-color:#e50914 !important;
-  color:white !important;
+.favorite-active {
+  background: #e50914 !important;
+  border-color: #e50914 !important;
+  color: white !important;
 }
 
-.liked-active{
-  background:#46d369 !important;
-  border-color:#46d369 !important;
-  color:white !important;
+.liked-active {
+  background: #46d369 !important;
+  border-color: #46d369 !important;
+  color: white !important;
 }
 
-.back-btn{
-  position:absolute;
-  top:20px;
-  left:20px;
-  width:50px;
-  height:50px;
-  border:none;
-  border-radius:50%;
-  background:rgba(0,0,0,.8);
-  color:white;
-  cursor:pointer;
-  z-index:10;
-  font-size:18px;
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.8);
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.movie-modal-content{
-  display:flex;
-  gap:40px;
-  padding:30px;
+.replay-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-.modal-left-section{
-  flex:2;
+.movie-modal-content {
+  display: flex;
+  gap: 40px;
+  padding: 40px 30px 30px;
 }
 
-.modal-right-section{
-  flex:1;
+.modal-left-section {
+  flex: 2;
 }
 
-.modal-movie-meta{
-  display:flex;
-  gap:20px;
-  margin-bottom:20px;
+.modal-right-section {
+  flex: 1;
 }
 
-.rating{
-  color:#46d369;
-  font-weight:bold;
+.modal-movie-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.modal-overview{
-  line-height:1.8;
-  color:#ddd;
+.rating {
+  color: #46d369;
+  font-weight: bold;
 }
 
-.modal-right-section p{
-  line-height:1.8;
-  color:#ccc;
+.modal-overview {
+  line-height: 1.8;
+  color: #ddd;
 }
 
-/* Similar Movies */
-
-/* .similar-section{
-  padding:30px;
+.modal-right-section p {
+  line-height: 1.8;
+  color: #ccc;
 }
 
-.similar-title{
-  margin-bottom:20px;
-  font-size:28px;
+/* Laptop / MacBook Media Breaks */
+@media(max-width: 1024px) {
+  .modal-banner {
+    height: 500px;
+  }
 }
 
-.similar-grid{
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fill,minmax(180px,1fr));
-  gap:16px;
-}
-
-.similar-card{
-  cursor:pointer;
-}
-
-.similar-card img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.similar-card p{
-  margin-top:8px;
-  color:white;
-  font-size:14px;
-}
-.similar-grid{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  padding-bottom:10px;
-}
-
-.similar-grid .movie-card{
-  min-width:220px;
-}
-.replay-btn{
-  position:absolute;
-  top:20px;
-  right:80px;
-  z-index:1000;
-
-  background:red;
-  color:white;
-
-  border:none;
-  border-radius:6px;
-
-  padding:10px 15px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-@media(max-width:768px){
-
-  .modal-banner{
-    height:250px;
+/* Tablet View Break */
+@media(max-width: 768px) {
+  .modal-overlay {
+    /* MOBILE/TABLET FIX: Centering hata kar top alignment diya taaki item upar na dabe */
+    align-items: flex-start; 
+    padding-top: 85px; /* Navbar layout spacing */
   }
 
-  .banner-content h1{
-    font-size:2rem;
+  .movie-modal {
+    width: 100%;
   }
 
-  .movie-modal-content{
-    flex-direction:column;
+  .modal-banner {
+    height: 280px;
   }
 
-  .similar-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-}  */
-
-
-
-
-
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  overflow-y:auto;
-  padding:20px;
-}
-
-.movie-modal{
-  width:95%;
-  max-width:1200px;
-  background:#181818;
-  border-radius:12px;
-  overflow:hidden;
-  color:white;
-}
-
-.modal-banner-container{
-  position:relative;
-}
-
-.modal-banner{
-  width:100%;
-  height:650px;
-  object-fit:cover;
-  background:black;
-  border:none;
-  display:block;
-}
-
-.banner-gradient{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to top,
-    #181818,
-    transparent 60%
-  );
-  pointer-events:none;
-}
-
-.banner-content{
-  position:absolute;
-  bottom:50px;
-  left:40px;
-  z-index:20;
-}
-
-.banner-content h1{
-  font-size:3rem;
-  margin-bottom:20px;
-}
-
-.banner-buttons{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-
-.modal-play-btn{
-  display:flex;
-  align-items:center;
-  gap:8px;
-
-  background:white;
-  color:black;
-
-  border:none;
-  padding:12px 22px;
-  border-radius:6px;
-
-  font-weight:700;
-  cursor:pointer;
-}
-
-.modal-circle-btn{
-  width:48px;
-  height:48px;
-
-  border-radius:50%;
-  border:2px solid rgba(255,255,255,.5);
-
-  background:#2a2a2a;
-  color:white;
-
-  cursor:pointer;
-}
-
-.favorite-active{
-  background:#e50914 !important;
-  border-color:#e50914 !important;
-  color:white !important;
-}
-
-.liked-active{
-  background:#46d369 !important;
-  border-color:#46d369 !important;
-  color:white !important;
-}
-
-.back-btn{
-  position:absolute;
-  top:20px;
-  left:20px;
-
-  width:50px;
-  height:50px;
-
-  border:none;
-  border-radius:50%;
-
-  background:rgba(0,0,0,.8);
-  color:white;
-
-  cursor:pointer;
-  z-index:1000;
-
-  font-size:18px;
-}
-
-.replay-btn{
-  position:absolute;
-
-  bottom:30px;
-  right:30px;
-
-  z-index:9999;
-
-  background:#e50914;
-  color:white;
-
-  border:none;
-  border-radius:8px;
-
-  padding:12px 20px;
-
-  cursor:pointer;
-  font-weight:600;
-}
-
-.movie-modal-content{
-  display:flex;
-  gap:40px;
-
-  padding:40px 30px 30px;
-}
-
-.modal-left-section{
-  flex:2;
-}
-
-.modal-right-section{
-  flex:1;
-}
-
-.modal-movie-meta{
-  display:flex;
-  gap:20px;
-  margin-bottom:20px;
-}
-
-.rating{
-  color:#46d369;
-  font-weight:bold;
-}
-
-.modal-overview{
-  line-height:1.8;
-  color:#ddd;
-}
-
-.modal-right-section p{
-  line-height:1.8;
-  color:#ccc;
-}
-
-@media(max-width:1024px){
-
-  .modal-banner{
-    height:500px;
+  /* Back button overlay fix */
+  .back-btn {
+    top: 15px;
+    left: 15px;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
   }
 
+  .banner-content {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .movie-modal-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .modal-movie-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .replay-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
 }
 
-@media(max-width:768px){
-
-  .movie-modal{
-    width:100%;
+/* Mobile View Break */
+@media(max-width: 480px) {
+  .modal-overlay {
+    padding: 85px 10px 20px 10px; /* Top side 85px space safe layout ke liye */
   }
 
-  .modal-banner{
-    height:280px;
+  .modal-banner {
+    height: 230px; /* Thoda sa height scale up kiya balance ke liye */
   }
 
-  .banner-content{
-    left:20px;
-    bottom:20px;
+  /* Mobile screen par back-button size perfect visibility ke liye */
+  .back-btn {
+    top: 10px;
+    left: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
   }
 
-  .banner-content h1{
-    font-size:1.8rem;
+  .banner-content h1 {
+    font-size: 1.4rem;
   }
 
-  .movie-modal-content{
-    flex-direction:column;
-    padding:20px;
+  .modal-play-btn {
+    padding: 10px 14px;
+    font-size: 14px;
   }
 
-  .modal-movie-meta{
-    flex-wrap:wrap;
-    gap:10px;
+  .modal-circle-btn {
+    width: 40px;
+    height: 40px;
   }
-
-  .replay-btn{
-    bottom:15px;
-    right:15px;
-    padding:8px 14px;
-    font-size:14px;
-  }
-
-}
-
-@media(max-width:480px){
-
-  .modal-banner{
-    height:220px;
-  }
-
-  .banner-content h1{
-    font-size:1.4rem;
-  }
-
-  .modal-play-btn{
-    padding:10px 14px;
-    font-size:14px;
-  }
-
-  .modal-circle-btn{
-    width:40px;
-    height:40px;
-  }
-
 }

@@ -1,62 +1,45 @@
-.search-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(6, 1fr);
-
-  gap:20px;
-
-  padding:20px 50px;
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  /* Desktop par top padding badha kar 90px kiya taaki content sahi dikhe */
+  padding: 90px 50px 20px 50px; 
+  box-sizing: border-box;
 }
 
 /* Large Laptop / MacBook */
-
-@media(max-width:1400px){
-
-  .search-grid{
-    grid-template-columns:
-      repeat(5, 1fr);
+@media(max-width: 1400px) {
+  .search-grid {
+    grid-template-columns: repeat(5, 1fr);
+    padding-top: 90px; /* Header spacing */
   }
-
 }
 
 /* Laptop */
-
-@media(max-width:1200px){
-
-  .search-grid{
-    grid-template-columns:
-      repeat(4, 1fr);
-
-    padding:20px 30px;
+@media(max-width: 1200px) {
+  .search-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* Top padding ko 90px rakha baaki left-right 30px */
+    padding: 90px 30px 20px 30px; 
   }
-
 }
 
 /* Tablet */
-
-@media(max-width:768px){
-
-  .search-grid{
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap:15px;
-    padding:15px 20px;
+@media(max-width: 768px) {
+  .search-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    /* Tablet mobile view ke liye top padding 85px safe side rahegi */
+    padding: 85px 20px 15px 20px; 
   }
-
 }
 
 /* Mobile */
-
-@media(max-width:480px){
-
-  .search-grid{
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap:10px;
-    padding:10px 15px;
+@media(max-width: 480px) {
+  .search-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    /* Mobile par jahan sabse zyada dikkat aa rahi thi, wahan top padding 85px kar di */
+    padding: 85px 15px 10px 15px; 
   }
-
 }

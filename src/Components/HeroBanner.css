@@ -1,28 +1,23 @@
-.hero-banner{
-  position:relative;
-  width:100%;
-  height:75vh;
-  min-height:500px;
-
-  background-size:cover;
-  
-  background-position:center top;
-  
-
-  background-repeat:no-repeat;
-
-  overflow:hidden;
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  /* DESKTOP FIX: Taki header ke niche se shuru ho */
+  padding-top: 80px; 
+  box-sizing: border-box;
 }
 
-.hero-overlay{
-  width:100%;
-  height:100%;
-
-  display:flex;
-  align-items:center;
-
-  background:
-  linear-gradient(
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
     to right,
     rgba(0,0,0,.88) 0%,
     rgba(0,0,0,.60) 35%,
@@ -31,172 +26,161 @@
   );
 }
 
-.hero-content{
-  max-width:500px;
-
-  padding-left:60px;
-  padding-right:20px;
-
-  color:white;
+.hero-content {
+  max-width: 500px;
+  padding-left: 60px;
+  padding-right: 20px;
+  color: white;
 }
 
-.hero-title{
-  font-size:2.8rem;
-  font-weight:800;
-
-  line-height:1.05;
-
-  margin-bottom:15px;
-
-  text-shadow:
-    0 2px 10px rgba(0,0,0,.7);
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0,0,0,.7);
 }
 
-.hero-description{
-  font-size:1rem;
-  line-height:1.6;
-
-  color:#e5e5e5;
-
-  margin-bottom:25px;
-
-  display:-webkit-box;
-  -webkit-line-clamp:3;
-  -webkit-box-orient:vertical;
-
-  overflow:hidden;
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+  margin-bottom: 25px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.hero-buttons button{
-  border:none;
-
-  padding:12px 24px;
-
-  border-radius:4px;
-
-  font-size:1rem;
-  font-weight:700;
-
-  cursor:pointer;
+.hero-buttons button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.play-btn{
-  background:white;
-  color:black;
+.play-btn {
+  background: white;
+  color: black;
 }
 
-.info-btn{
-  background:rgba(109,109,110,.7);
-  color:white;
+.info-btn {
+  background: rgba(109,109,110,.7);
+  color: white;
 }
 
 .play-btn:hover,
-.info-btn:hover{
-  opacity:.85;
+.info-btn:hover {
+  opacity: .85;
 }
 
 /* MacBook */
-
-@media(max-width:1400px){
-
-  .hero-title{
-    font-size:2.5rem;
+@media(max-width: 1400px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
-
 }
 
 /* Laptop */
-
-@media(max-width:992px){
-
-  .hero-banner{
-    height:65vh;
-    min-height:450px;
+@media(max-width: 992px) {
+  .hero-banner {
+    height: 65vh;
+    min-height: 450px;
+    padding-top: 80px;
   }
 
-  .hero-content{
-    padding-left:40px;
+  .hero-content {
+    padding-left: 40px;
   }
 
-  .hero-title{
-    font-size:2.2rem;
+  .hero-title {
+    font-size: 2.2rem;
   }
-
 }
 
 /* Tablet */
-
-@media(max-width:768px){
-
-  .hero-banner{
-    height:60vh;
-    min-height:380px;
-
-    background-position:center 15%;
+@media(max-width: 768px) {
+  .hero-banner {
+    height: 60vh;
+    min-height: 380px;
+    /* Spacing fixed for navbar overlay */
+    padding-top: 85px; 
+    /* Position ko center top rakha taaki image upar se na kate */
+    background-position: center top; 
   }
 
-  .hero-content{
-    max-width:90%;
-    padding:25px;
+  .hero-overlay {
+    /* Mobile/Tablet par content ko thoda niche push karne ke liye flex align change kiya */
+    align-items: flex-start; 
+    padding-top: 20px;
   }
 
-  .hero-title{
-    font-size:1.9rem;
+  .hero-content {
+    max-width: 90%;
+    padding: 25px;
   }
 
-  .hero-description{
-    font-size:.9rem;
-    -webkit-line-clamp:2;
+  .hero-title {
+    font-size: 1.9rem;
   }
 
-  .hero-buttons button{
-    padding:10px 18px;
-    font-size:.9rem;
+  .hero-description {
+    font-size: .9rem;
+    -webkit-line-clamp: 2;
   }
 
+  .hero-buttons button {
+    padding: 10px 18px;
+    font-size: .9rem;
+  }
 }
 
 /* Mobile */
-
-@media(max-width:480px){
-
-  .hero-banner{
-    height:55vh;
-    min-height:320px;
-
-    background-position:center 10%;
+@media(max-width: 480px) {
+  .hero-banner {
+    height: 55vh;
+    min-height: 340px; /* Thoda height badhaya taki content handle ho sake */
+    /* Mobile safe top spacing */
+    padding-top: 85px; 
+    background-position: center top; 
   }
 
-  .hero-content{
-    max-width:95%;
-    padding:18px;
+  .hero-overlay {
+    align-items: flex-start;
+    padding-top: 15px; /* Hero title aur description ko exact breathing room dega */
   }
 
-  .hero-title{
-    font-size:1.5rem;
-    margin-bottom:10px;
+  .hero-content {
+    max-width: 95%;
+    padding: 15px 18px;
   }
 
-  .hero-description{
-    font-size:.8rem;
-    line-height:1.4;
-
-    -webkit-line-clamp:2;
+  .hero-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
   }
 
-  .hero-buttons{
-    gap:8px;
+  .hero-description {
+    font-size: .8rem;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    margin-bottom: 15px;
   }
 
-  .hero-buttons button{
-    padding:8px 14px;
-    font-size:.8rem;
+  .hero-buttons {
+    gap: 8px;
   }
 
+  .hero-buttons button {
+    padding: 8px 14px;
+    font-size: .8rem;
+  }
 }
